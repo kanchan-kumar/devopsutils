@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.1.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.devxprime</groupId>
+	<artifactId>devopsutils</artifactId>
+	<version>1.1.0</version>
+	<name>devopsutils</name>
+	<description>Developer Utility Tools</description>
+	<packaging>war</packaging>
+
+
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>jcenter</id>
+			<url>https://jcenter.bintray.com/</url>
+		</repository>
+		<repository>
+			<id>local-repo</id>
+			<url>file:///${basedir}/jars/</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web-services</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.bitbucket.mstrobel/procyon-compilertools -->
+		<dependency>
+			<groupId>org.bitbucket.mstrobel</groupId>
+			<artifactId>procyon-compilertools</artifactId>
+			<version>0.5.36</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- exclude logback , add log4j2 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jd</groupId>
+			<artifactId>jd-core</artifactId>
+			<version>1.0.7</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.benf/cfr -->
+		<dependency>
+			<groupId>org.benf</groupId>
+			<artifactId>cfr</artifactId>
+			<version>0.146</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.smali/dexlib2 -->
+		<dependency>
+			<groupId>org.smali</groupId>
+			<artifactId>dexlib2</artifactId>
+			<version>2.0.3</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.objectweb.asm/org.objectweb.asm -->
+		<!-- https://mvnrepository.com/artifact/org.ow2.asm/asm -->
+		<!-- https://mvnrepository.com/artifact/org.ow2.asm/asm -->
+		<dependency>
+			<groupId>org.ow2.asm</groupId>
+			<artifactId>asm</artifactId>
+			<version>7.1</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/uk.com.robust-it/cloning -->
+		<dependency>
+			<groupId>uk.com.robust-it</groupId>
+			<artifactId>cloning</artifactId>
+			<version>1.9.12</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.rover12421.android/dx -->
+		<dependency>
+			<groupId>com.rover12421.android</groupId>
+			<artifactId>dx</artifactId>
+			<version>1.16</version>
+		</dependency>
+
+		<dependency>
+			<groupId>jadx</groupId>
+			<artifactId>jadx.core</artifactId>
+			<version>1.0</version>
+			<scope>install</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>android</groupId>
+			<artifactId>jadx.android</artifactId>
+			<version>5.1</version>
+			<scope>install</scope>
+		</dependency>
+
+		<!-- Local Dependency -->
+		<dependency>
+			<groupId>jadx</groupId>
+			<artifactId>jadx.core</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/jars/jadx-core.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>android</groupId>
+			<artifactId>jadx.android</artifactId>
+			<version>5.1</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/jars/android-5.1.jar</systemPath>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-install-plugin</artifactId>
+
+					<executions>
+						<execution>
+							<configuration>
+								<groupId>jadx</groupId>
+								<artifactId>jadx.core</artifactId>
+								<version>1.0</version>
+								<packaging>jar</packaging>
+								<file>${basedir}/jars/jadx-core.jar</file>
+								<generatePom>true</generatePom>
+
+							</configuration>
+							<id>install-jadx</id>
+							<goals>
+								<goal>install-file</goal>
+							</goals>
+							<phase>package</phase>
+						</execution>
+
+
+						<execution>
+							<configuration>
+								<groupId>android</groupId>
+								<artifactId>jadx.android</artifactId>
+								<version>5.1</version>
+								<packaging>jar</packaging>
+								<file>${basedir}/jars/android-5.1.jar</file>
+								<generatePom>true</generatePom>
+
+							</configuration>
+							<id>install-jadx-android</id>
+							<goals>
+								<goal>install-file</goal>
+							</goals>
+							<phase>package</phase>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>copy-files-on-build</id>
+							<phase>compile</phase>
+							<goals>
+								<goal>copy-resources</goal>
+							</goals>
+							<configuration>
+								<outputDirectory>${basedir}/target/devopsutils-1.1.0/WEB-INF/lib</outputDirectory>
+								<resources>
+									<resource>
+										<directory>${basedir}/jars</directory>
+										<include>*.jar</include>
+										<filtering>false</filtering>
+									</resource>
+								</resources>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<executions>
+						<execution>
+							<phase>install</phase>
+							<goals>
+								<goal>copy</goal>
+							</goals>
+							<configuration>
+								<artifactItems>
+									<artifactItem>
+										<groupId>com.github.jsimone</groupId>
+										<artifactId>webapp-runner</artifactId>
+										<version>9.0.24.0</version>
+										<destFileName>webapp-runner.jar</destFileName>
+									</artifactItem>
+								</artifactItems>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-war-plugin</artifactId>
+					<configuration>
+						<warName>devopstools</warName>
+					</configuration>
+					<executions>
+						<execution>
+							<id>default-war</id>
+							<phase>install</phase>
+							<goals>
+								<goal>war</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>
